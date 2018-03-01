@@ -9,6 +9,7 @@ django-debug-toolbar==1.9.1
 django-environ==0.4.4
 django-htmlmin==0.10.0
 django-mptt==0.8.7
+django-webdav-storage==0.6.1
 djangorestframework==3.6.4
 fake-factory==9999.9.9
 html5lib==0.999999999
