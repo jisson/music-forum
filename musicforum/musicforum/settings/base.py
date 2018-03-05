@@ -201,6 +201,9 @@ INSTALLED_APPS = [
     'misago.readtracker',
     'misago.search',
     'misago.faker',
+
+    # Extra third party apps used by music-forum
+    'django_crontab',
 ]
 
 INTERNAL_IPS = [
@@ -369,4 +372,13 @@ MISAGO_PROFILE_FIELDS = [
             'misago.users.profilefields.default.LastIpField',
         ],
     },
+]
+
+CRONJOBS = [
+    ('15 0 * * *', 'django.core.management.call_command', ['prunecategories']),
+    ('25 0 * * *', 'django.core.management.call_command', ['buildactivepostersranking']),
+    ('25 0 * * *', 'django.core.management.call_command', ['clearattachments']),
+    ('25 0 * * *', 'django.core.management.call_command', ['clearreadtracker']),
+    ('25 0 * * *', 'django.core.management.call_command', ['clearsessions']),
+    ('25 0 * * *', 'django.core.management.call_command', ['invalidatebans']),
 ]

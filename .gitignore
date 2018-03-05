@@ -82,3 +82,6 @@ ENV/
 
 # pipenv: https://github.com/kennethreitz/pipenv
 /Pipfile
+
+musicforum/static
+musicforum/media
