@@ -204,6 +204,8 @@ INSTALLED_APPS = [
 
     # Extra third party apps used by music-forum
     'django_crontab',
+
+    'musicforum.apps.rmaze',
 ]
 
 INTERNAL_IPS = [
@@ -275,6 +277,8 @@ TEMPLATES = [
                 # Note: keep frontend_context processor last for previous processors
                 # to be able to expose data UI app via request.frontend_context
                 'misago.core.context_processors.frontend_context',
+
+                'musicforum.apps.rmaze.context_processors.rmaze_dsn',
             ],
         },
     },
@@ -382,3 +386,8 @@ CRONJOBS = [
     ('25 0 * * *', 'django.core.management.call_command', ['clearsessions']),
     ('25 0 * * *', 'django.core.management.call_command', ['invalidatebans']),
 ]
+
+# RMAZE
+# ------------------------------------------------------------------------------
+RMAZE_DSN = env.str('RMAZE_DSN', None)
+RMAZE_CLIENT_URL = env.str('RMAZE_CLIENT_URL', None)

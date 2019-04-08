@@ -1,0 +1,8 @@
+{% if RMAZE_DSN %}
+
+    <script type="application/javascript">
+        const dsn = '{{ RMAZE_DSN }}';
+    </script>
+    <script type="text/javascript" src="{{ RMAZE_CLIENT_URL }}"></script>
+
+{% endif %}
