@@ -10,7 +10,7 @@ django-debug-toolbar==1.9.1
 django-environ==0.4.4
 django-htmlmin==0.10.0
 django-mptt==0.8.7
-djangorestframework==3.6.4
+djangorestframework==3.11.2
 fake-factory==9999.9.9
 Faker==0.8.13
 html5lib==0.999999999
